@@ -1,0 +1,111 @@
+body {
+    background-color: rgb(41, 41, 61);
+}
+
+#banner {
+    font-size: 25px;
+    color: #fff;
+    text-align: center;
+}
+
+#banner h1 {
+    font-size: 55px;
+}
+
+#wrapper {
+    font-family: 'Lato', sans-serif;
+    display: grid;
+    grid-row-gap: 10px;
+    justify-content: center;
+    align-content: center;
+}
+
+
+
+#sounds {
+    color: #fff;
+    font-size: 15px;
+    text-align: center;
+}
+
+#buttonsRec {
+    display: flex;
+    justify-content: center;
+}
+
+#recording button {
+    margin-top: 30px;
+    text-decoration: none;
+    background-color: #cc80ff;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 13px;
+    padding: 13px 25px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #2f6627;
+}
+
+#buttonsRec button {
+    display: none;
+}
+
+#source {
+    color: #737373;
+    padding-top: 80px;
+    padding-bottom: 50px;
+    text-align: center;
+}
+
+#source a {
+    text-decoration: none;
+    color: #cc80ff;
+}
+
+.letter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #333;
+    color: #eee;
+    float: left;
+    border-radius: 0.3em;
+    margin: 0.2em;
+    padding: 0.2em;
+    width: 4em;
+    height: 4em;
+    box-sizing: border-box;
+    border: 1px solid #444;
+    box-shadow: 0 0.2em 0 0.05em #222;
+    border-bottom-color: #555;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+}
+
+#recording {
+    text-align: center;
+    color: white;
+}
+
+input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #fff;
+    transition: 0.2s all linear;
+    margin-right: 5px;
+    position: relative;
+    top: 4px;
+}
+
+input:checked {
+    border: 6px solid #cc80ff;
+}

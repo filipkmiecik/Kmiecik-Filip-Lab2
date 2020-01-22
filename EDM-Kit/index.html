@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <link rel="shortcut icon"
+        href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/225/musical-keyboard_1f3b9.png"
+        type="image/x-icon">
+    <title>EDM Kit</title>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="banner">
+            <h1>Create and Record Electronic Music</h1>
+            Press the corresponding keys on your keyboard to play sounds!
+        </div>
+        <div id="sounds">
+            <audio id="perc1" src="sounds/Percussion/Perc1.wav"></audio>
+            <audio id="perc2" src="sounds/Percussion/Perc2.wav"></audio>
+            <audio id="perc3" src="sounds/Percussion/Perc3.wav"></audio>
+            <audio id="perc4" src="sounds/Percussion/Perc4.wav"></audio>
+            <audio id="perc5" src="sounds/Percussion/Perc5.wav"></audio>
+            <audio id="perc6" src="sounds/Percussion/Perc6.wav"></audio>
+            <audio id="hihat1" src="sounds/HiHats/Hihat1.wav"></audio>
+            <audio id="hihat2" src="sounds/HiHats/Hihat2.wav"></audio>
+            <audio id="hihat3" src="sounds/HiHats/Hihat3.wav"></audio>
+            <audio id="hihat4" src="sounds/HiHats/Hihat4.wav"></audio>
+            <audio id="hihat5" src="sounds/HiHats/Hihat5.wav"></audio>
+            <audio id="hihat6" src="sounds/HiHats/Hihat6.wav"></audio>
+            <audio id="bassdrum1" src="sounds/Bassdrums/Bassdrum1.wav"></audio>
+            <audio id="bassdrum2" src="sounds/Bassdrums/Bassdrum2.wav"></audio>
+            <audio id="bassdrum3" src="sounds/Bassdrums/Bassdrum3.wav"></audio>
+            <audio id="bassdrum4" src="sounds/Bassdrums/Bassdrum4.wav"></audio>
+            <audio id="bassdrum5" src="sounds/Bassdrums/Bassdrum5.wav"></audio>
+            <audio id="bassdrum6" src="sounds/Bassdrums/Bassdrum6.wav"></audio>
+            <audio id="snare1" src="sounds/Snares/Snare1.wav"></audio>
+            <audio id="snare2" src="sounds/Snares/Snare2.wav"></audio>
+            <audio id="snare3" src="sounds/Snares/Snare3.wav"></audio>
+            <audio id="snare4" src="sounds/Snares/Snare4.wav"></audio>
+            <audio id="snare5" src="sounds/Snares/Snare5.wav"></audio>
+            <audio id="snare6" src="sounds/Snares/Snare6.wav"></audio>
+
+            <h2>percussions</h2>
+            <div class="row">
+                <div class="letter">
+                    Q
+                </div>
+                <div class="letter">
+                    W
+                </div>
+                <div class="letter">
+                    E
+                </div>
+                <div class="letter">
+                    R
+                </div>
+                <div class="letter">
+                    T
+                </div>
+                <div class="letter">
+                    Y
+                </div>
+
+            </div>
+
+            <h2>snares</h2>
+            <div class="row">
+                <div class="letter">
+                    U
+                </div>
+                <div class="letter">
+                    I
+                </div>
+                <div class="letter">
+                    O
+                </div>
+                <div class="letter">
+                    P
+                </div>
+                <div class="letter">
+                    A
+                </div>
+                <div class="letter">
+                    S
+                </div>
+            </div>
+
+            <h2>bassdrums</h2>
+            <div class="row">
+                <div class="letter">
+                    D
+                </div>
+                <div class="letter">
+                    F
+                </div>
+                <div class="letter">
+                    G
+                </div>
+                <div class="letter">
+                    H
+                </div>
+                <div class="letter">
+                    J
+                </div>
+                <div class="letter">
+                    K
+                </div>
+            </div>
+
+            <h2>hi-hats</h2>
+            <div class="row">
+                <div class="letter">
+                    L
+                </div>
+                <div class="letter">
+                    Z
+                </div>
+                <div class="letter">
+                    X
+                </div>
+                <div class="letter">
+                    C
+                </div>
+                <div class="letter">
+                    V
+                </div>
+                <div class="letter">
+                    B
+                </div>
+            </div>
+        </div>
+        <div id="recording">
+            <div id="channelSelect">
+                <hr />
+                <p>Select a sound channel</p>
+                <p><input type="radio" name="channelId" id="channel1" value="1" onclick="show1()">1</p>
+                <p><input type="radio" name="channelId" id="channel2" value="2" onclick="show2()">2</p>
+                <p><input type="radio" name="channelId" id="channel3" value="3" onclick="show3()">3</p>
+                <p><input type="radio" name="channelId" id="channel4" value="4" onclick="show4()">4</p>
+            </div>
+            <div id="buttonsRec">
+                <button id="channel1Rec">🎙️ Record Channel 1</button>
+                <button id="channel2Rec">🎙️ Record Channel 2</button>
+                <button id="channel3Rec">🎙️ Record Channel 3</button>
+                <button id="channel4Rec">🎙️ Record Channel 4</button>
+            </div>
+            <div id="buttonsPlay">
+                <button id="channel1Play">🔊 Play Channel 1</button>
+                <button id="channel2Play">🔊 Play Channel 2</button>
+                <button id="channel3Play">🔊 Play Channel 3</button>
+                <button id="channel4Play">🔊 Play Channel 4</button>
+                <div id="buttonsPlayAll"> <button id="channelAllPlay">🔊 Play all channels</button></div>
+            </div>
+        </div>
+        <script src="drumkit.js"></script>
+        <footer id="source">All audio is royalty free and comes from <a
+                href="https://www.ghosthack.de/free_sample_packs/ghosthack-samplepack5/"
+                target="_blank">ghosthack.de</a></footer>
+    </div>
+    </div>
+    </div>
+</body>
+
+</html>
