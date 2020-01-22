@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CanvasPainting</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Alatsi&display=swap" rel="stylesheet">
+    <script src="save.js"></script>
+    <script src="clear.js"></script>
+    <script src="draw.js"></script>
+    <script src="filter.js"></script>
+    <script src="canvas.js"></script>
+</head>
+<body>
+    <div id="canvasSpace">
+    <canvas id="canvasPaint" width="800" height="600"></canvas>
+    </div>
+    <div id="controlsContainer">
+    <div id="controls">
+        <div class="colors">
+            <button type="button" value="#ff0000"></button>
+            <button type="button" value="#ff7700"></button>
+            <button type="button" value="#ffea00"></button>
+            <button type="button" value="#00ff00"></button>
+            <button type="button" value="#00eaff"></button>
+            <button type="button" value="#004cff"></button>
+            <button type="button" value="#8c00ff"></button>
+            <button type="button" value="#000000"></button>           
+        </div>
+        <div id="brush">
+        <p>Shape</p>        
+          <button id="square">Square</button>
+          <button id="triangle">Triangle</button>         
+        </div>
+        <div id="filters">
+            <button id="brightIncrease">Brightness +</button>
+            <button id="brightDecrease">Brightness -</button>
+            <button id="invertColor">Invert Color</button>
+            <button id="contrastIncrease">Contrast +</button>
+            <button id="contrastDecrease">Contrast -</button>
+            <button id="grayscale">Grayscale</button>           
+        </div>
+        <div id="fileUpload">
+        <input type="file" id="userImage" accept="image/*" />
+            </div>
+        <div id="options">
+    <button id="clear">Clear</button>
+    <button id="save">Save</button>
+    </div>
+    </div>
+    </div>
+</body>
+</html>
