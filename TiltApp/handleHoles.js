@@ -4,6 +4,7 @@ class HandleHoles{
         this.text = document.querySelector('#text')
         this.ctx = this.canvas.getContext("2d")
         this.text.innerHTML = ""
+        this.gameStart = +new Date()
         this.holeCollection = []
         this.holeAmount = 5
         this.createHoles();
@@ -22,14 +23,14 @@ class HandleHoles{
                 hole.isActive = true;
                 this.holeCollection.push(hole)      
             }else{
-                this.checkIfDontOverlap(hole)        
+                this.checkForOverlapping(hole)        
             }
             
         }
     }
 
-    checkIfDontOverlap(hole){
-        if (this.checkIfTheCirclesDontOverlap(hole.x, hole.y))
+    checkForOverlapping(hole){
+        if (this.checkForOverlappingHoles(hole.x, hole.y))
         {
                     this.holeCollection.push(hole)
                 }else{
@@ -39,10 +40,10 @@ class HandleHoles{
                         id: this.holeCollection.length,
                         isActive:false,
                             };
-                    this.checkIfDontOverlap(hole2)
+                    this.checkForOverlapping(hole2)
                 }  
     }
-    checkIfTheCirclesDontOverlap(holeX, holeY){      
+    checkForOverlappingHoles(holeX, holeY){      
         for(let i = 0; i < this.holeCollection.length; i++){
            let x = Math.abs(this.holeCollection[i].x - holeX)
            let y = Math.abs(this.holeCollection[i].y - holeY)
@@ -89,8 +90,7 @@ class HandleHoles{
         this.holeCollection[this.goalHole].isActive = false
     
         this.disablePreviousActive(x,y)
-        this.announceVictory()     
-        
+        this.announceVictory()           
     }
 
     disablePreviousActive(x,y){
@@ -103,8 +103,10 @@ class HandleHoles{
     announceVictory(){
         this.goalHole += 1
 
-        if(this.goalHole == this.holeAmount){
-            this.text.innerHTML = "grats, you won!"
+        if (this.goalHole == this.holeAmount) {
+            this.gameEnd = +new Date()
+            this.timeTaken = (this.gameEnd - this.gameStart)/1000
+            this.text.innerHTML = "grats, you won in " + this.timeTaken + " seconds!"
         }else{
             this.holeCollection[this.goalHole].isActive = true
         }
