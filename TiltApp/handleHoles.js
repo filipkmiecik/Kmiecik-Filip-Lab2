@@ -33,15 +33,8 @@ class HandleHoles{
         if (this.checkForOverlappingHoles(hole.x, hole.y))
         {
                     this.holeCollection.push(hole)
-                }else{
-                    const hole2 = {   
-                        x: Math.floor(Math.random() * 850) + 80,
-                        y: Math.floor(Math.random() * 650) + 80,
-                        id: this.holeCollection.length,
-                        isActive:false,
-                            };
-                    this.checkForOverlapping(hole2)
-                }  
+                }                
+                  
     }
     checkForOverlappingHoles(holeX, holeY){      
         for(let i = 0; i < this.holeCollection.length; i++){
