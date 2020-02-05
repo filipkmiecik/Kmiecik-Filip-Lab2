@@ -1,33 +1,30 @@
-import Generator from './generator.js';
-import HoleGenerator from './HoleGenerator.js';
 
 class Canvas{
     constructor(){
         this.canvas = document.querySelector('#gameArea');
-        this.ctx = this.canvas.getContext("2d");
+        this.context = this.canvas.getContext("2d");
         this.x = 296; 
         this.y = 296;
         this.time = Date.now();
         this.HoleGenerator = new HoleGenerator(this.time);
-        this.drawCircle();
+        this.createBall();
         this.HoleGenerator.drawAllHoles();
-        this.updateCenterXandY();
+        this.handlePositionCenter();
         this.startEventListeners();
     }
     
-    drawCircle(x=296,y=296){
-        this.ctx.clearRect(0, 0, 600, 600);
-        this.ctx.beginPath();
-        this.ctx.arc(x,y, 25, 0, 2*Math.PI);
-        this.ctx.fillStyle = 'red';
-        this.ctx.fill();
-        this.ctx.stroke();
+    createBall(x=296,y=296){
+        this.context.clearRect(0, 0, 600, 600);
+        this.context.beginPath();
+        this.context.arc(x,y, 25, 0, 2*Math.PI);
+        this.context.fillStyle = 'red';
+        this.context.fill();
+        this.context.stroke();
     }
 
-    updateCenterXandY(){
+    handlePositionCenter(){
         this.centerX = this.x + 12.5;
         this.centerY = this.y + 12.5;
-
     }
 
     startEventListeners(){
@@ -35,38 +32,34 @@ class Canvas{
     }
 
     handleOrientation(e){
-        this.y = this.moveVerticalY(e.beta);
-        this.x = this.moveHorizontalX(e.alpha);
-        this.drawCircle(this.x, this.y);
-        this.updateCenterXandY(); 
+        this.y = this.handlePositionY(e.beta);
+        this.x = this.handlePositionX(e.alpha);
+        this.createBall(this.x, this.y);
+        this.handlePositionCenter(); 
         this.HoleGenerator.drawAllHoles();  
         this.HoleGenerator.checkIfBallIsHole(this.centerX, this.centerY, this.time);  
     }
-
-    moveVerticalY(beta){
-        if(beta < 0){
-            return 26;
-        }else if(beta > 90){
-            return 566;
-        }else{
-            return (beta*6)+26;
-        }  
-    }
     
-    moveHorizontalX(alpha){
-        if(alpha < -45){
+    handlePositionX(a){
+        if(a < -45){
             return 26;
-        }else if(alpha <0 && alpha >= -45){
-            return  (270 - ((alpha*-1)*6))+26;
-        }else if(alpha < 45){
-            return  ((alpha*6)+270)+26;
-        }else if(alpha > 70){
+        }else if(a <0 && a >= -45){
+            return  (270 - ((a*-1)*6))+26;
+        }else if(a < 45){
+            return  ((a*6)+270)+26;
+        }else if(a > 70){
             return 566;
         }
     }
+    handlePositionY(b){
+        if(b < 0){
+            return 26;
+        }else if(b > 90){
+            return 566;
+        }else{
+            return (b*6)+26;
+        }  
+    }
+    
 }
 
-
-
-
-export default Canvas;
