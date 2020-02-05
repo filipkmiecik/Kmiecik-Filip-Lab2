@@ -11,8 +11,8 @@ class HoleGenerator{
     createHoles(){
         for(let i = 0; this.holeCollection.length < this.holeAmount ;i++){
             const obj = {   
-                x: Math.floor(Math.random() * 548) + 26,
-                y: Math.floor(Math.random() * 548) + 26,
+                x: Math.floor(Math.random() * 850) + 80,
+                y: Math.floor(Math.random() * 650) + 80,
                 postion: this.holeCollection.length,
                 isActive:false,
                         };
@@ -32,8 +32,8 @@ class HoleGenerator{
                     this.holeCollection.push(obj);
                 }else{
                     const obj2 = {   
-                        x: Math.floor(Math.random() * 548) + 26,
-                        y: Math.floor(Math.random() * 548) + 26,
+                        x: Math.floor(Math.random() * 850) + 80,
+                        y: Math.floor(Math.random() * 650) + 80,
                         postion: this.holeCollection.length,
                         isActive:false,
                             };
@@ -44,7 +44,7 @@ class HoleGenerator{
         for(let i = 0; i < this.holeCollection.length; i++){
            let x = Math.abs(this.holeCollection[i].x - objX);
            let y = Math.abs(this.holeCollection[i].y - objY);
-           if(x < 50 || y < 50){
+           if(x < 90 || y < 90){
                return false;
            }else{
                return true;
@@ -56,7 +56,7 @@ class HoleGenerator{
     drawAllHoles(){
         this.holeCollection.forEach((item) =>{
             this.ctx.beginPath();
-            this.ctx.arc(item.x, item.y, 30, 0, 2 * Math.PI);
+            this.ctx.arc(item.x, item.y, 40, 0, 2 * Math.PI);
             if(item.isActive){
                 this.ctx.fillStyle = "#66FF66";
                 this.ctx.fill();

@@ -14,17 +14,17 @@ class Canvas{
     }
     
     createBall(x=296,y=296){
-        this.context.clearRect(0, 0, 600, 600);
+        this.context.clearRect(0, 0, 1000, 800);
         this.context.beginPath();
-        this.context.arc(x,y, 25, 0, 2*Math.PI);
+        this.context.arc(x,y, 35, 0, 2*Math.PI);
         this.context.fillStyle = 'red';
         this.context.fill();
         this.context.stroke();
     }
 
     handlePositionCenter(){
-        this.centerX = this.x + 12.5;
-        this.centerY = this.y + 12.5;
+        this.centerX = this.x + 17.5;
+        this.centerY = this.y + 17.5;
     }
 
     startEventListeners(){
@@ -40,25 +40,25 @@ class Canvas{
         this.HoleGenerator.checkIfBallIsHole(this.centerX, this.centerY, this.time);  
     }
     
-    handlePositionX(a){
-        if(a < -45){
-            return 26;
-        }else if(a <0 && a >= -45){
-            return  (270 - ((a*-1)*6))+26;
-        }else if(a < 45){
-            return  ((a*6)+270)+26;
-        }else if(a > 70){
-            return 566;
-        }
+    handlePositionX(a) {
+    if (a < -45) {
+        return 35
+    } else if (a < 0 && a >= -45) {
+        return (270 - ((a * -1) * 6)) + 35
+    } else if (a < 110) {
+        return ((a * 6) + 270) + 35
+    } else if (a > 110) {
+        return 965
     }
-    handlePositionY(b){
-        if(b < 0){
-            return 26;
-        }else if(b > 90){
-            return 566;
-        }else{
-            return (b*6)+26;
-        }  
+}
+    handlePositionY(b) {
+    if (b < 0) {
+        return 35;
+    } else if (b > 120) {
+        return 765;
+    } else {
+        return (b * 6) + 35;
+    }
     }
     
 }
