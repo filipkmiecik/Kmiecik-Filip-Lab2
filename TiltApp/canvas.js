@@ -51,7 +51,7 @@ class Canvas{
         return 965
     }
 }
-    handlePositionY(b) {
+handlePositionY(b) {
     if (b < 0) {
         return 35;
     } else if (b > 120) {
